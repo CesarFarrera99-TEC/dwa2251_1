@@ -24,7 +24,7 @@ class PuertaController extends Controller
             echo "ni te conozco";
         }else{
           if( Hash::check($request->clave , $encontrado->clave) ){
-            Auth::login($encontrado);
+            Auth::loginUsingId($encontrado->id);
             return redirect(route('puerta.inicio'));
           }else{
             echo "no te sabes la clave";
